@@ -1,0 +1,248 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+$text-font:$font-opensans;
+$text-color: $text-color;
+
+$heading-font: $font-dmserif;
+$heading-color: $main-color;
+
+$anchor-font:$font-opensans;
+$anchor-color: $text-color;
+$anchor-hover-color: $dark-green;
+
+$table_font:$font-opensans;
+$table-color: $text-color;
+$table-bg-color: $text-color;
+$table-border-color: $text-color;
+
+.wysiwig-container {
+  @include responsive-font-size(20, null, null, 15px); // Base font size
+  @include responsive-line-height(44, null, null, 28px); // Base line height
+  
+  p {
+    @include responsive-font-size(20, null, null, 15px); // Paragraph font size
+    @include responsive-line-height(44,null,null,28px); // Paragraph line height
+  }
+
+  li {
+    @include responsive-font-size(20, null, null, 15px); // List item font size
+    @include responsive-line-height(44,null,null,28px); // Paragraph line height
+  }
+
+  a {
+    @include responsive-font-size(20, null, null, 15px); // anchor font size
+    @include responsive-line-height(44, null, null, 28px); //  anchor line height
+  }
+
+  h1 {
+    @include responsive-font-size(65, null, null, 35px); // Heading 1 font size
+    @include responsive-line-height(75,null,null,58px); // Heading 1 line height
+  }
+
+  h2 {
+    @include responsive-font-size(40, null, null, 25px); // Heading 2 font size
+    @include responsive-line-height(48,null,null,35px); // Heading 2 line height
+  }
+
+  h3 {
+    @include responsive-font-size(35, null, null, 25px); // Heading 3 font size
+    @include responsive-line-height(40,null,null,35px); // Heading 3 line height
+  }
+
+  h4 {
+    @include responsive-font-size(30, null, null, 25px); // Heading 4 font size
+    @include responsive-line-height(40,null,null,35px); // Heading 4 line height
+  }
+
+  h5 {
+    @include responsive-font-size(25, null, null, 20px); // Heading 5 font size
+    @include responsive-line-height(40,null,null,35px); // Heading 5 line height
+  }
+
+  h6 {
+    @include responsive-font-size(22, null, null, 20px); // Heading 6 font size
+    @include responsive-line-height(40,null,null,35px); // Heading 5 line height
+  }
+}
+
+
+.page-template-default,.page-template-T06-location{
+  .wysiwig-container {
+    @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    
+    p {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+      @include responsive-padding-bottom(50, null, null, 30px);
+    }
+  
+    li {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    }
+  
+    a {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    }
+  
+    h2 {
+      @include responsive-letter-spacing(0.5, null, null, 0.5px);
+      @include responsive-padding-bottom(30, null, null, 15px);
+    }
+  
+    h3 {
+      @include responsive-padding-bottom(10, null, null, 10px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h4 {
+      @include responsive-padding-bottom(10, null, null, 10px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h5 {
+      @include responsive-padding-bottom(10, null, null, 10px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h6 {
+      @include responsive-padding-bottom(30, null, null, 10px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  }
+}
+
+.page-id-244, .page-id-242{
+  .wysiwig-container {
+    @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    
+    p {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+      padding: 0 !important;
+    }
+  
+    li {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    }
+  
+    a {
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    }
+  
+    h2 {
+      @include responsive-letter-spacing(0.5, null, null, 0.5px);
+      @include responsive-padding-bottom(15, null, null, 15px);
+      @include responsive-padding-top(30, null, null, 15px);
+    }
+  
+    h3 {
+      @include responsive-padding-bottom(15, null, null, 15px);
+      @include responsive-padding-top(30, null, null, 15px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h4 {
+      @include responsive-padding-bottom(15, null, null, 15px);
+      @include responsive-padding-top(30, null, null, 15px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h5 {
+      @include responsive-padding-bottom(15, null, null, 15px);
+      @include responsive-padding-top(30, null, null, 15px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+  
+    h6 {
+      @include responsive-padding-bottom(15, null, null, 15px);
+      @include responsive-padding-top(30, null, null, 15px);
+      @include responsive-letter-spacing(0.32, null, null, 0.3px);
+    }
+    td {
+      border: 1px solid #000 !important;
+    }
+  }
+}
+
+.wysiwig-container {
+  font-family: $text-font;
+  color: $text-color;
+  ul{
+    padding-left: 1.5rem;
+    @media screen and (max-width:991px) {
+      padding-left: 1rem !important;
+    }
+  }
+  p,li,span{
+    font-family: $text-font;
+    color: $text-color;
+  }
+  a {
+    font-family: $anchor-font;
+    color: $anchor-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+      color: $anchor-hover-color !important;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $heading-color;
+    font-family: $heading-font;    
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    td {
+      border: none;
+      padding: 0;
+      @include responsive-padding-left(30, null, 35px, 35px);
+      @include responsive-font-size(20, null, null, 15px); 
+      @include responsive-line-height(44, null, null, 28px);
+      color: $main-color;
+      font-family: $table_font;
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    }
+    th {
+      background:#F2EEE5;
+      color: $main-color;
+      font-family: $table_font;
+      @include responsive-font-size(20, null, null, 15px);
+      @include responsive-line-height(44, null, null, 28px);
+      @include responsive-letter-spacing(0.4, null, null, 0.4px);
+      font-weight: 400;
+      border-right: 1px solid #BEBABA;
+      border-bottom: 0 !important;
+      padding: 0 ;
+      @include responsive-padding-left(30, null, 35px, 35px);
+      &:last-child{
+        border-right: 0 !important;
+      }
+    }
+    &.table-striped>tbody>tr:nth-of-type(even) {
+      --bs-table-accent-bg: var(--bs-table-striped-bg);
+      color: var(--bs-table-striped-color);
+    }
+    &.table-striped>tbody>tr:nth-of-type(odd) {
+      --bs-table-accent-bg: transparent;
+      color: var(--bs-table-striped-color);
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+}
+@media only screen and (max-width: 1025px) {
+  .wysiwig-container table th{
+    padding-right: 35px !important;
+  }
+}
+@media (min-width: 600px) and (max-width: 1025px) {
+}
+@media only screen and (max-width: 600px) {
+}

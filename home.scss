@@ -1,0 +1,710 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+#whybookus{
+    .icons-set {
+        @include responsive-padding-bottom(5, null, null, 0);
+        .icon-title {
+            @include responsive-padding-left(20, null, null, 10px);
+            @include responsive-width(155, null, null, null);
+            @include responsive-font-size(18, null, null, 16px);
+            font-style: normal;
+            text-transform: capitalize;
+            @include responsive-line-height(30, null, null, 28px);
+            @include responsive-letter-spacing(0.2, null, null, 0.2px);
+        }
+        hr{
+            height: 40px;
+            border: 1px solid #313131;
+            margin: 10px !important;
+            opacity: 0.2 !important;
+            &:nth-child(8){
+                display: none;
+            }
+            @media screen and (max-width:667px) {
+                display: none;
+            }
+        }
+        @media screen and (max-width:667px) {
+            .set{
+                padding-bottom: 15px;
+                justify-content: flex-start !important;
+            }
+        }
+    }
+}
+
+#accommodationHome{
+    position: relative;
+    &::after{
+        content: "";
+        background-image: url('../../img/bg-cream.png');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: auto;
+        top: 0;
+    }
+    .accommotitle{
+        @include responsive-font-size(150, null, 40px, 33px);
+        font-style: normal;        
+        text-transform: uppercase;
+        @include responsive-padding-bottom(100, null, null, 45px);
+        @include responsive-letter-spacing(4.5, null, null, 4px);
+        @include responsive-line-height(105, null, 45px, 30px);
+        @media screen and (max-width:667px) {
+            font-weight: 600;
+        }
+    }
+    .accommodationTabs {
+        z-index: 8;
+        position: relative;
+        .wrapperTbsUl {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include responsive-padding-bottom(60, null, null, 0);
+            @media screen and (max-width:667px) {
+                display: none !important;
+            }
+            ul#myTab{
+                border-bottom: none !important;
+                @media screen and (max-width:991px) {
+                    justify-content: space-between;
+                }
+                @media screen and (max-width:667px) {
+                    padding-bottom: 30px;
+                }
+                li {
+                    background-color: transparent;
+                    border: none !important;
+                    @media screen and (max-width:667px) {
+                        width: 50%;
+                    }
+                    button {
+                        color:$main-color;
+                        font-family: $font-dmserif;
+                        @include responsive-font-size(28, null, null, 22px);
+                        font-style: normal;
+                        font-weight: 400;
+                        background-color: transparent;
+                        border: 0 !important;
+                        text-transform: capitalize;
+                        @include responsive-line-height(40, null, null, 38px);
+                        padding: 0;
+                        @include responsive-margin-left(20, null, null, 10px);
+                        @include responsive-margin-right(20, null, null, 10px);
+                    }
+                    button.active{
+                        border-bottom: 2px solid #CB997E !important;
+                    }
+                }
+            }
+        }
+        .roomTypesPost-slider{
+            .roomStaysSlider{
+                .imageRoom::after {
+                    content: "";
+                    background: rgb(0,0,0);
+                    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    z-index: 8;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                .inerDetails{
+                    position: absolute;
+                    top: auto;
+                    bottom: 0;
+                    z-index: 9;
+                    text-align: center;
+                    width: 100%;
+                    @include responsive-padding-bottom(50, null, null, 30px);
+                    .typename{
+                        @include responsive-font-size(16, null, null, 15px);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        @include responsive-letter-spacing(1.6, null, null, 1.6px);
+                        text-transform: uppercase;
+                        @include responsive-padding-bottom(15, null, null, 10px);
+                    }
+                    .roomname{
+                        font-style: normal;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                    }
+                }
+                .amenitiestypes{
+                    @include responsive-padding-bottom(45, null, null, 35px);
+                    @include responsive-padding-top(45, null, null, 35px);
+                    hr {
+                        border: 1px solid $text-color;
+                        height: 20px !important;
+                        margin: 0 20px !important;
+                        opacity: 1;
+                        @media screen and (max-width:667px) {
+                            margin: 0 10px !important;
+                        }
+                    }
+                    hr:last-child {
+                        display: none;
+                    }
+                    .amenity_name{
+                        @include responsive-font-size(20, null, null, 16px);
+                        font-style: normal;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        @include responsive-line-height(30, null, null, 28px);                        
+                    }
+                }
+            }
+        }
+    }
+    // .desktop-tabs { display: flex; }
+    // .mobile-tabs { display: none; }
+
+    // @media (max-width: 667px) {
+    //     .desktop-tabs { display: none; }
+    //     .mobile-tabs { display: block; }
+    // }
+    button#roomTabDropdown {
+        background-color: transparent;
+        border: 1px solid $text-color;
+        padding: 5px 10px;
+        text-align: left;
+        @include responsive-font-size(20, null, null, 16px);
+        font-style: normal;
+        font-weight: 400;
+        text-transform: capitalize;
+        @include responsive-line-height(30, null, null, 28px); 
+    }
+
+}
+
+
+#specialOffers{
+    .description-padding--30{
+        @include responsive-padding-top(30, null, null, 20px);
+        @include responsive-padding-bottom(40, null, null, 20px);
+    }
+    .slider-offers-home {
+        @media screen and (max-width: 1600px) {
+            .slick-arrow {
+              top: 45%;
+            }
+        }
+        .imageOffersHome {
+            &::after {
+                content: "";
+                background: rgb(0, 0, 0);
+                background: linear-gradient(0deg, rgb(26 20 20) 0%, rgba(0, 0, 0, 0) 80%);
+                width: 100%;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                z-index: 8;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                visibility: visible;
+            }
+            a:hover{
+                color: $white !important;
+            }
+            .inerDetails{
+                position: absolute;
+                top: auto;
+                bottom: 0;
+                z-index: 9;
+                text-align: center;
+                width: 100%;
+                @include responsive-padding-bottom(50, null, null, 30px);
+                .roomname{
+                    font-style: normal;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    @include responsive-padding-left(20, null, null, 10px);
+                    @include responsive-padding-right(20, null, null, 10px);
+                }
+                .offersmoredetails{
+                    color: $white !important;
+                    transition: none !important;
+                    width: fit-content;
+                    margin: auto;
+                }
+            }
+            .hoverDescription{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 1s ease, visibility 0.5s ease;
+                left: 0;
+                right: 0;
+                margin: 30px !important;
+                text-align: center;
+                display: flex ;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 30px;
+                background: rgb(0, 0, 0);
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 80%);
+                .roomnameH{
+                    font-style: normal;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                }
+                .discriptionofer{
+                    color: $white !important;
+                    font-family: $font-opensans;
+                    @include responsive-font-size(16, null, null, 15px);
+                    font-style: normal;
+                    font-weight: 400;
+                    @include responsive-line-height(32, null, null, 28px);
+                    opacity: 1;
+                }
+                .offersmoredetailsH{
+                    color: $white !important;
+                    transition: none !important;
+                    width: fit-content;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }            
+            &:hover{
+                &::after{
+                    content: "";
+                    visibility: hidden;
+                }
+                .hoverDescription{
+                    opacity: 1;
+                    visibility: visible;
+                    @media screen and (max-width:991px) {
+                        display: none;
+                    }
+                }
+                .inerDetails{
+                    .roomname,.offersmoredetails{
+                        display: none;
+                        transition: none !important;
+                        @media screen and (max-width:991px) {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#experienceHM{
+    position: relative;
+    &::after{
+        content: "";
+        background-image: url('../../img/bg-cream.png');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: auto;
+        top: 0;
+    }
+    .descriptionsec {
+       padding-top: 0;
+    }
+    .wrapper--75{
+        z-index: 8;
+        position: relative;
+    }
+    .galleryExperience{
+        z-index: 8;
+        position: relative;
+        @include responsive-padding-top(80, null, 0, 0);
+        @media screen and (max-width:1025px) {
+            padding-bottom: 50px !important;
+        }
+        @media screen and (max-width:667px) {
+            padding-bottom: 30px !important;
+        }
+        .slider-expo-gallery-hm{        
+            .slick-list {
+                @include responsive-padding-left(200, null, null, 0);
+                @include responsive-padding-right(200, null, null, 0);
+                .imagegal-expo {
+                    @include responsive-margin-right(20, null, null, 15px);
+                    @include responsive-margin-left(20, null, null, 15px);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                    &::after{
+                        content: "";
+                        background: rgb(0, 0, 0);
+                        background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 80%);
+                        width: 100%;
+                        height: 300px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        z-index: 8;
+                        top: auto;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                    .inerDetails{
+                        position: absolute;
+                        top: auto;
+                        bottom: 0;
+                        z-index: 9;
+                        text-align: center;
+                        width: 100%;
+                        .exponame{
+                            font-style: normal;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            @media screen and (max-width:667px) {
+                                padding: 20px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#sustaiblefaq {
+    .susfaqBGImage{
+        position: absolute;
+        z-index: -1;
+        object-fit: fill;
+        @include responsive-padding-top(200, null, null, 100px);
+        @media screen and (max-width:1025px) {
+            object-fit: cover;
+        }
+    }
+    @include responsive-padding-bottom(100, null, null, 50px);
+	// background: url("../../img/bg-banner.png");
+    z-index: 8;
+    .accordian-half{
+        background-color: $white;
+        @include responsive-padding(50, null, null, 30px);
+        padding-top: 0 !important;
+        @media screen and (max-width:1025px) {
+            padding-top: 30px !important;
+        }
+    }
+}
+
+#locatemap{
+    background-image: url(../../img/light_green_paint.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    .title-locate{
+        span{
+            @include responsive-font-size(22, null, null, 20px);
+        }
+    }
+    .locateHomeAll{
+        .slick-arrow {
+            border: 0;
+            font-size: 0;
+            background-color: transparent;
+            background-repeat: no-repeat !important;
+            background-position: center;
+            background-size: 70%;
+            z-index: 1;
+            border-radius: 50%;
+            position: absolute;
+            top: calc((320px / 2) - (50px / 2));
+            @include responsive-width(50, null, null, 40px);
+            @include responsive-height(50, null, null, 40px);
+            @media screen and (max-width: 1600px) {
+                top: 30%;
+            }
+            @media screen and (max-width:1500px) {
+                top: 25%;
+            }
+        }
+        .slick-slider .slick-prev {
+            left: -75px;
+            @media screen and (max-width:1440px) {
+                left: -50px;
+            }
+        }
+        .slick-slider .slick-next {
+            right: -75px;
+            @media screen and (max-width:1440px) {
+                right: -50px;
+            }
+        }
+        
+    }
+    .mapimageHome{
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .attol_name-div {
+            position: absolute;
+            top: 20%;
+            transform: translate(-100%);
+            white-space: nowrap;
+            padding: 0;
+            background-color: $white;
+            color: $main-color;
+            text-align: center;
+            font-family: $font-opensans;
+            @include responsive-font-size(20, null, null, 16px);
+            @include responsive-line-height(40, null, null, 28px);
+            font-weight: 400;
+            text-transform: capitalize;
+            text-wrap: inherit;
+            // @include responsive-width(255, null, 200px, auto);
+            width: max-content;
+            @include responsive-padding-left(10, null, 10px, null);
+            @include responsive-padding-right(10, null, 10px, null);
+            cursor: pointer;
+            &:hover{
+                background-color: #425742;
+                color: $white;
+            }
+            @media screen and (max-width:991px) {
+                display: none;
+            }
+        }
+        div#attoll-body-div-1{
+            .attol_name-div {
+                top: 48% !important;
+                bottom: auto;
+                left: 20%;
+                right: auto;
+            }
+            @media screen and (max-width:991px) {
+                display: none;
+            }
+            @media screen and (max-width:667px) {
+                display: none;
+            }
+        }
+        div#attoll-body-div-2 {
+            .attol_name-div {
+                top: 23% !important;
+                bottom: auto;
+                left: auto;
+                right: -38%;
+                @media screen and (max-width:1025px) {
+                    right: 5%;
+                }
+                @media screen and (max-width:667px) {
+                    display: none;
+                }
+            }
+        }
+        div#attoll-body-div-3{
+            .attol_name-div{
+                top: 40.5% !important;
+                bottom: auto;
+                left: auto;
+                right: 8%;
+                @media screen and (max-width:1025px) {
+                    top: 42% !important;
+                    right: 17%;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+                @media screen and (max-width:667px) {
+                    display: none;
+                }
+            }
+        }
+        div#attoll-body-div-4{
+            .attol_name-div{
+                top: 16% !important;
+                bottom: auto;
+                left: 25%;
+                right: auto;
+            }
+        }
+        div#attoll-body-div-5{
+            .attol_name-div{
+                top: 31% !important;
+                bottom: auto;
+                left: 22%;
+                right: auto;
+                background-color: $bg-btn-color;
+                color: $white;
+                @media screen and (max-width:1025px) {
+                    top: 32% !important;
+                    right: 9%;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }
+        }
+        div#attoll-body-div-6{
+            .attol_name-div{
+                top: 56% !important;
+                bottom: auto;
+                left: auto;
+                right: 7%;
+                @media screen and (max-width:1025px) {
+                    top: 57% !important;
+                    right: 17% !important;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }
+        }
+        div#attoll-body-div-7{
+            .attol_name-div{
+                top: 23% !important;
+                bottom: auto;
+                left: 24%;
+                right: auto;
+                @media screen and (max-width:1025px) {
+                    top: 24% !important;
+                    right: 9% !important;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }           
+        }
+        div#attoll-body-div-8{
+            .attol_name-div{
+                top: 49% !important;
+                bottom: auto;
+                left: auto;
+                right: -20%;
+                @media screen and (max-width:1025px) {
+                    top:50% !important;
+                    right: -1% !important;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }            
+        }
+    }
+    .attoll-body-div.active .attol_name-div {
+        background-color: #425742;
+        color: $white;
+    }    
+}
+
+#AwardsHM{
+    .slider-awards {
+        img {
+            width: auto !important;
+            @include responsive-height(100, null, null, 70px);
+            margin: auto;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+    }
+    .slick-arrow{
+        top: 30px !important;
+        @media screen and (max-width:1025px) {
+            top: auto !important;
+        }
+    }
+}
+
+#instagramSection{
+    .instafollow{
+        @include responsive-font-size(24, null, null, 20px);
+        text-transform: lowercase;
+        text-decoration: none;
+        @include responsive-line-height(38.4, null, null, 30px);
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    #welcomesection{
+        .half-div--35, .half-div--60{
+            width: 100% !important;
+        }
+    }
+    #whybookus{
+        .icons-set hr{
+            display: none;
+        }
+        .set {
+            width: 50% !important;
+            padding-bottom: 20px !important;
+            justify-content: center !important;
+        }
+    }
+    #specialOffers{
+        .half-div--30, .half-div--63{
+            width: 100% !important;
+        }
+    }
+}
+
+
+@media screen and (max-width:667px) {
+    #whybookus{
+        .icons-set hr{
+            display: none;
+        }
+        .set {
+            width: 100% !important;
+            padding-bottom: 20px !important;
+        }
+    }
+    section#specialOffers {
+        padding-bottom: 60px !important;
+    }
+}
+
+
+@media screen and (min-width:1920px) {
+    section#accommodationHome{
+        .slick-arrow {
+            top: 35%;
+            &.slick-next{
+                right: -2.8%;
+            }
+            &.slick-prev {
+                left: -2.8%;
+            }
+        }
+    }
+    #locatemap .locateHomeAll .slick-slider{
+        .slick-arrow {
+            top: 25%;
+            &.slick-next{
+                right: -13%;
+            }
+            &.slick-prev {
+                left: -13%;
+            }
+        }
+    }
+}

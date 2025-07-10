@@ -1,0 +1,39 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+section#locationBlocks{
+    .icon{
+        @include responsive-width(60, null, 50px, 50px);
+        @include responsive-height(60, null, 50px, 50px);
+        @include responsive-padding(15, null, 9px, 9px);
+        background-color: $bg-cream;
+    }
+    .itemicon{
+        @include responsive-padding-left(25, null, null, 20px);
+    }
+    .list-item{
+        @media screen and (max-width:667px) {
+            padding-bottom: 30px !important;
+        }
+    }
+}
+
+
+#nearAttractions{
+    .list-item{
+        padding-bottom: 0 !important;
+        @media screen and (max-width:667px) {
+            padding-bottom: 40px !important;
+            .wysiwig-container{
+                p{
+                    padding-bottom: 0 !important;
+                }
+            }
+        }
+        .title-locate{
+            span{
+                @include responsive-font-size(22, null, null, 20px);
+            }
+        }
+    }
+}

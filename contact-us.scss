@@ -1,0 +1,51 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+section#ContactPg{
+    .half-div--25{
+        svg{
+            margin-right: 10px !important;
+        }
+    }
+    hr{
+        margin: 25px 0 !important;
+        @media screen and (max-width:1025px) and (min-width:667px) {
+           visibility: hidden;
+           margin: 15px 0 !important;
+        }
+    }
+    .socialicons{
+        a{
+            display: flex;
+            transition: transform 0.3s ease, fill 0.3s ease;
+            align-items: center;
+            justify-content: center;
+            svg.icon {
+                @include responsive-width(40, null, null, 30px);
+               @include responsive-height(40, null, null, 30px);
+            }
+            &:hover{
+                transform: scale(1.1);
+                .icon{
+                    fill: #007bff;
+                }
+            }
+        }
+    }
+    .formButolderdiv {
+        position: relative;
+        padding: 45px !important;
+        background-image: url(../../img/bg-cream.png);
+        background-color: $bg-cream;
+        @media screen and (max-width:667px){
+            padding: 20px !important;
+        }
+    }
+}
+
+
+@media screen and (max-width:1025px) {
+    section#ContactPg br {
+        display: none;
+    }
+}

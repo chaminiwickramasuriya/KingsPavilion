@@ -1,0 +1,374 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+
+header#header {
+    position: absolute;
+    z-index: 9;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;   
+    transition: all 0.5s; 
+    .mainheaderdiv {
+        @include responsive-padding-top(65, null, null, 50px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .hamburg-menu{
+            svg {
+                @include responsive-width(40, 45, 40px, 30px);
+                @include responsive-height(27, 45, 30px, 27px);
+            }
+        }
+        .logoheader {
+            @include responsive-width(120, null, null, 70px);
+            @include responsive-height(90, null, null, 60px);            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .BooknowBtn {
+            border: 1px solid $bg-btn-color;
+            background-color: transparent;
+            @include responsive-width(200, null, 150px, 150px);
+            @include responsive-height(55, null, null, 45px);
+            color: $white;
+            text-align: center;
+            font-family: $font-opensans;
+            @include responsive-font-size(18, null, null, 15px);
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            transition: all 0.5s;
+            @include responsive-line-height(28, null, null, 28px);
+            @include responsive-letter-spacing(0.9, null, null, 0.5px);
+            &:hover{
+                background-color: $bg-btn-color;
+                transition: all 0.5s;
+            }
+            @media screen and (max-width:991px) {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width:991px) {
+        &.header-scrolled{
+            background-color: #656A57;
+            height: 70px;
+            padding: 0 !important;
+            position: fixed;
+            transition: all 0.5s;
+            .mainheaderdiv{
+                padding-top: 0 !important;         
+            }
+        }
+    }
+}
+
+
+div#offcanvasMenu{    
+    &.offcanvas-start {
+        background: rgba(22, 22, 22, 0.56);
+        backdrop-filter: blur(14.25px);
+        @include responsive-width-percentage(30%, null, 50%, 100%);        
+        .offcanvas-header {
+            justify-content: end;
+            padding: 2rem;
+            svg.icon{
+                @include responsive-width(30, null, null, 20px);
+                @include responsive-height(30, null, null, 20px);
+                cursor: pointer;              
+            }
+        }
+        .offcanvas-body{
+            @include responsive-padding-left(100, null, 50px, 30px);
+            @include responsive-padding-right(50, null, 50px, 30px);
+            ul#menu-hamburger-main-menu{
+                li{
+                    a{
+                        color: $white;
+                        font-family:$font-dmserif;
+                        @include responsive-font-size(40, null, null, 25px); 
+                        @include responsive-line-height(80, null, null, 50px); 
+                        font-style: normal;
+                        font-weight: 400;
+                        @include responsive-letter-spacing(0.4, null, null, 0.4px);
+                        text-transform: capitalize;                         
+                    }
+                    a.active{
+                        color: $bg-btn-color !important;
+                    }
+                    &.menu-item-has-children{
+                        ul.sub-menu{
+                            list-style-type: none;
+                            li{
+                                a{
+                                    color: $white !important;
+                                    font-family: $font-opensans;
+                                    @include responsive-font-size(20, null, null, 16px);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    @include responsive-line-height(44, null, null, 28px);
+                                    @include responsive-letter-spacing(0.4, null, null, 0.4px);
+                                    text-transform: capitalize;
+                                    @media screen and (max-width:991px) {
+                                        padding-bottom: 15px;
+                                    }
+                                }
+                                a.active{
+                                    color: $bg-btn-color !important;
+                                }
+                            }
+                            li.current_page_item{
+                                a{
+                                    color: $bg-btn-color !important;
+                                }
+                            }
+                        }                        
+                    }
+                }
+                .current_page_item{
+                    a{
+                        color: $bg-btn-color !important;
+                    }
+                }
+                li.current-page-ancestor, li.current_page_ancestor{
+                    a{
+                        color: $bg-btn-color;
+                        li.current_page_item.active{
+                            a{
+                                color: $bg-btn-color !important;
+                            }
+                        }
+                    }
+                    .span.submenu-toggle{
+                        svg{
+                            fill:$bg-btn-color !important;
+                            @media screen and (max-width:991px) {
+                                fill: $white !important;
+                            }
+                        }
+                    }
+                }
+            }
+            hr{
+                opacity: 0.15;
+                border: 1px solid #B7B7A4;
+                margin: 50px auto !important;
+            }
+            ul#menu-hamburger-bottom-menu{
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                li{
+                    @include responsive-width-percentage(48%, null, 50%, 50%);
+                    a{
+                        color: $white;
+                        font-family: $font-opensans;
+                        @include responsive-font-size(20, null, null, 16px);
+                        font-style: normal;
+                        font-weight: 400;
+                        @include responsive-line-height(44, null, null, 28px);
+                        @include responsive-letter-spacing(0.4, null, null, 0.4px);
+                        text-transform: capitalize;
+                    }
+                    &:hover{
+                        a{
+                            color: #CB997E;
+                        }
+                    }
+                    &.current_page_item{
+                        a{
+                            color: #CB997E !important;
+                        }
+                    }
+                }
+            }
+            .sub-menu {
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.3s ease;
+            }
+            
+            
+            li.open > .sub-menu {
+                display: block;
+            }
+            
+            .menu-item-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:hover{
+                    a{
+                        color: $bg-btn-color !important;
+                    }
+                    svg{
+                        use{
+                            fill: #C99E66;
+                        }
+                    }
+                }
+            }
+            
+            .submenu-toggle {
+                cursor: pointer;
+                padding-left: 10px;
+                svg.icon{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+header#header.no-banners{
+    display: none;
+    transition: all 0.5s;
+    @media screen and (max-width:991px) {
+        display: flex !important;
+        transition: all 0.5s;
+    }
+    .mainheaderdiv{
+        .BooknowBtn{
+            background-color: $bg-btn-color;
+        }
+        svg.icon g rect{
+            fill: $bg-btn-color !important;
+        }
+    }
+    .mainheaderdiv{
+        @include responsive-padding-top(30, null, null, 20px);
+    }
+}
+
+.fixedHeaderMenu.fixednobanner{
+    display: flex !important;
+    transition: all 0.5s;
+    @media screen and (max-width:991px) {
+        display: none !important;
+        transition: all 0.5s;
+    }
+}
+
+.menu-item-wrapper .submenu-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+li.open .submenu-toggle svg {
+    transform: rotate(180deg);
+    
+}
+
+.fixedHeaderMenu {
+    transition: all 0.5s;
+    display: none;
+    width: 100%;
+    background-color: $white;
+    padding: 10px 0 !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    &.header-scrolled {        
+        z-index: 9;
+        transition: all 0.5s;
+        position: fixed;
+        display: flex;
+        @media screen and (max-width:991px) {
+            display: none;
+        }
+    }
+    .logoheader {
+        .hamburg-menu-mobile{
+            @include responsive-width(40, null, null, 30px);
+            @include responsive-height(55, null, null, 40px);            
+            display: flex;
+            align-items: center;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .logoicon {
+            @include responsive-height(55, null, null, 40px);
+            @include responsive-width(85, null, null, 60px);
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    .fixedmenubar {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            li{
+                @include responsive-padding-left(15, null, 10px, 0);
+                @include responsive-padding-right(15, null, 10px, 0);
+                a{
+                    color: $main-color;
+                    font-family: $font-opensans;
+                    @include responsive-font-size(18, null, 12px, 15px);
+                    @include responsive-line-height(32, null, null, 28px);
+                    font-style: normal;
+                    font-weight: 500;
+                    @include responsive-letter-spacing(0.9, null, null, 0.5px);
+                    text-transform: uppercase;
+                    &:hover{
+                        color: $bg-btn-color;
+                    }
+                }
+               &.current_page_item{
+                    a{
+                        color: $bg-btn-color;
+                    }
+                }
+                &.current-menu-item{
+                    a{
+                        color: $bg-btn-color;
+                    }
+                }
+            }
+        }
+    }
+    .BooknowBtn {
+        border: 1px solid $bg-btn-color;
+        background-color: transparent;
+        @include responsive-width(200, null, 150px, 150px);
+        @include responsive-height(55, null, null, 45px);
+        color: $main-color;
+        text-align: center;
+        font-family: $font-opensans;
+        @include responsive-font-size(18, null, 14px, 15px);
+        font-style: normal;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        @include responsive-line-height(28, null, null, 28px);
+        @include responsive-letter-spacing(0.9, null, null, 0.5px);
+        &:hover{
+            background-color: $bg-btn-color;
+            transition: all 0.5s;
+            color: $white;
+        }
+
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .reservationMenuFixMobile {
+        display: flex !important;
+    }
+}
+

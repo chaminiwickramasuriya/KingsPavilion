@@ -1,0 +1,41 @@
+@use "sass:math";
+@function get-vw($size) {
+    @return  math.div($size, 1920) * 100vw;
+}
+@function get-px($size) {
+    @return math.div($size, 1920) * 100px;
+}
+$font-opensans :  "Open Sans", sans-serif;
+$font-dmserif : "DM Serif Text", serif;
+
+$black: #000000;
+$white: #ffffff;
+$beige: #A5A58D;
+$main-color: #313131;
+$text-color: #515151;
+$light-green: #D8DACB;
+$dark-green:#656A57;
+$dark-ash:#353535;
+
+$bg-green : #656A57;
+$bg-cream : #f9f5ed;
+$bg-btn-color: #CB997E;
+$blue-color: #182E39;
+
+// $main-theme-color:#A5D7E0;
+// $secondary-theme-color:#AC8878;
+
+// $cream-color:#F8F2ED;
+// $blue-color:#A5D7E0;
+// $light-blue:#15CBD3;
+// $brown-color:#AC8878;
+// $light-black:#262626;
+// $sea-green-color:#2F9CA1;
+// $dark-blue:#198fae;
+// $light-brown:#787878;
+// $orange:#BC491F;
+// $dark-red:#1E0008;
+// $dark-black:#121212;
+// $luminus-blue:#27C7D4;
+// $blue-v1:#22AEB9;
+// $ocean:#02D8E9;

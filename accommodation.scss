@@ -1,0 +1,199 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+#checkTime{
+    .svgicon {
+        background-color: $bg-cream;
+        @include responsive-padding(10, null, null, 10px);
+        @include responsive-width(60, null, null, 50px);
+        @include responsive-height(60, null, null, 50px);
+        svg.icon{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .checingtime {
+        @include responsive-padding-left(20, null, null, 10px);
+    }
+    hr{
+        @include responsive-margin-left(50, null, 30px, 20px);
+        @include responsive-margin-right(50, null, 30px, 20px);
+        margin-right: 2.6041666667vw;
+        border: 1px solid #B7B7A4;
+        height: 22px;
+        margin-top: 0 !important;
+        opacity: 0.15;
+    }
+    .textcheck {
+        font-style: normal;
+        font-weight: 600;
+        text-transform: capitalize;
+        @include responsive-padding-bottom(10, null, null, 5px);
+    }
+    .timecheck {
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+
+
+#allaccommodations{
+    .categoryRoomTypes{
+        position: relative;
+        &::after{
+            content: "";
+            background-image: url('../../img/bg-cream.png');
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: auto;
+            top: 0;
+        }
+        &.active {
+            position: sticky !important;
+            top: 3.9vw; 
+            z-index: 100;
+            @include responsive-padding-bottom(30, null, null, 10px);
+            @include responsive-padding-top(30, null, null, 10px);
+            @media screen and (max-width:1025px) {
+                top: 64px;
+            }
+        }
+        a.active {
+            border-bottom: 2px solid #8c6f4a; 
+            font-weight: bold;
+        }
+    }
+    .roomtypename{
+        font-weight: 400;
+        @include responsive-padding-left(20, null, null, 10px);
+        @include responsive-padding-right(20, null, null, 10px);
+        text-decoration: none;
+        z-index: 8;
+        position: relative;
+        a{
+            text-decoration: none;
+        }
+        &.active{
+            a{
+                color: $main-color;
+                border-bottom: 2px solid #CB997E;
+            }
+        }
+        &:hover{
+            a{
+                color: $main-color;
+                border-bottom: 2px solid #CB997E;
+            }
+        }
+    }
+    .juniorsuits{
+        background-color: $bg-cream;
+        @include responsive-padding-top(60, null, null, 30px);
+        &:nth-child(odd){
+            position: relative;
+            &::after{
+                content: "";
+                background-image: url('../../img/bg-cream.png');
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: auto;
+                top: 0;
+            }
+        }
+        &:nth-child(even){
+            background-color: $white;            
+        }
+        .suitName{
+            z-index: 8;
+            position: relative;
+        }
+        .roomTypesPostListing{
+            @include responsive-margin-left(-15, null, 0, 0);
+            @include responsive-margin-right(-15, null, 0, 0);
+            z-index: 8;
+            position: relative;
+            .roomStaysPosts{
+                @include responsive-margin-left(15, null, 0, 0);
+                @include responsive-margin-right(15, null, 0, 0); 
+                @include responsive-padding-bottom(80, null, null, 50px);
+                @media screen and (max-width:1025px) and (min-width:667px) {
+                    width: 48% !important;
+                }
+                .listingBooking{
+                    @media screen and (max-width:667px) {                    
+                        position: relative;
+                    }  
+                }                
+                .imageRoom::after {
+                    content: "";
+                    background: rgb(0,0,0);
+                    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    z-index: 8;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                .inerDetails{
+                    position: absolute;
+                    top: auto;
+                    bottom: 0;
+                    z-index: 9;
+                    text-align: center;
+                    width: 100%;
+                    @include responsive-padding-bottom(50, null, null, 30px);
+                    .typename{
+                        @include responsive-font-size(16, null, null, 15px);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        @include responsive-letter-spacing(1.6, null, null, 1.6px);
+                        text-transform: uppercase;
+                        @include responsive-padding-bottom(15, null, null, 10px);
+                    }
+                    .roomname{
+                        font-style: normal;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        @media screen and (max-width:991px) {
+                            padding: 0 5px;
+                        }
+                    }
+                }
+                .amenitiestypes{
+                    @include responsive-padding-bottom(45, null, null, 35px);
+                    @include responsive-padding-top(45, null, null, 35px);
+                    hr {
+                        border: 1px solid $text-color;
+                        height: 20px !important;
+                        margin: 0 20px !important;
+                        opacity: 1;
+                        @media screen and (max-width:667px) {
+                            margin: 0 10px !important;
+                        }
+                    }
+                    hr:last-child {
+                        display: none;
+                    }
+                    .amenity_name{
+                        @include responsive-font-size(20, null, null, 16px);
+                        font-style: normal;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        @include responsive-line-height(30, null, null, 28px);                        
+                    }
+                }
+            }
+        }
+    }
+}
+

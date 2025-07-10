@@ -1,0 +1,138 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+.page-template-T05-offers-inner {
+    .wysiwig-container {
+        @include responsive-letter-spacing(0.4, null, null, 0.4px);
+        p {
+            @include responsive-font-size(20, null, null, 16px);
+            @include responsive-line-height(44, null, null, 28px);
+            @include responsive-letter-spacing(0.4, null, null, 0.4px);
+            @include responsive-padding-bottom(50, null, null, 30px);
+        }
+        ul{
+            @include responsive-padding-bottom(50, null, null, 30px);
+            list-style-type: none;
+            padding-left: 0;
+            @media screen and (max-width:991px) {
+                padding-left: 0 !important;
+            }
+        }
+        li {
+            @include responsive-letter-spacing(0.4, null, null, 0.4px);
+            @include responsive-padding-bottom(10, null, null, 10px);
+            @include responsive-font-size(20, null, null, 16px);
+            @include responsive-line-height(44, null, null, 28px);
+            @include responsive-padding-left(30, 35, 35px, 30px);
+            z-index: 8;
+            position: relative;            
+            &::after{
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0.7vw;
+              width: 20px;
+              height: 20px;
+              background-image: url(../../img/check.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              @media screen and (max-width:1025px) {
+                top: 10%;
+              }
+              @media screen and (max-width:667px) {
+                top: 1vw;
+              }
+            }
+            strong{
+                font-weight: 600;
+            }
+          }
+        a {
+          @include responsive-letter-spacing(0.4, null, null, 0.4px);
+        }
+      
+        h2 {
+          @include responsive-letter-spacing(0.5, null, null, 0.5px);
+          @include responsive-padding-bottom(32, null, null, 15px);
+          @include responsive-letter-spacing(0.32, null, null, 0.3px);
+          font-family: $font-dmserif;
+          color: $blue-color;
+        }
+      
+        h3 {
+          @include responsive-padding-bottom(10, null, null, 10px);
+          @include responsive-letter-spacing(0.32, null, null, 0.3px);
+          @include responsive-padding-bottom(32, null, null, 15px);
+          font-family: $font-dmserif;
+          color: $blue-color;
+        }
+      
+        h4 {
+          @include responsive-padding-bottom(10, null, null, 10px);
+          @include responsive-letter-spacing(0.32, null, null, 0.3px);
+          @include responsive-padding-bottom(30, null, null, 15px);
+          font-family: $font-dmserif;
+          color: $blue-color;
+        }
+      
+        h5 {
+          @include responsive-padding-bottom(10, null, null, 10px);
+          @include responsive-letter-spacing(0.32, null, null, 0.3px);
+          @include responsive-padding-bottom(30, null, null, 15px);
+          font-family: $font-dmserif;
+          color: $blue-color;
+        }
+      
+        h6 {
+          @include responsive-padding-bottom(30, null, null, 10px);
+          @include responsive-letter-spacing(0.32, null, null, 0.3px);
+          @include responsive-padding-bottom(30, null, null, 15px);
+          font-family: $font-dmserif;
+          color: $blue-color;
+        }
+    }
+}
+
+
+
+.OffersIntroduction{
+    .wrapper--55{
+        z-index: 8;
+        position: relative;
+    }
+    &::after{
+        content: "";
+        background-image: url(../../img/bg-cream.png);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: auto;
+        top: 0;
+    }
+}
+
+#ExclusiveValues{
+    .wrapper--60{
+        z-index: 8;
+        position: relative;
+    }
+    &::after{
+        content: "";
+        background-image: url(../../img/bg-cream.png);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: auto;
+        top: 0;
+    }
+}
+
+
+@media screen and (max-width:1600px) {
+  .page-template-T05-offers-inner .wysiwig-container li{
+    padding-left: 35px !important;
+    &::after{
+      top: 0.5vw;
+    }
+  }
+}

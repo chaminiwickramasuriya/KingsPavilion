@@ -1,0 +1,455 @@
+
+@use "sass:math";
+
+@mixin responsive-font-size($value-desktop,$value-laptop: null,$value-tab: null,$value-mobile,$base-width: 1920) {
+    
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+       font-size: math.div($value-desktop, $base-width) * 100vw !important;
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        font-size: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw) !important; // Use laptop size or fallback to desktop
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        font-size: if($value-tab != null, $value-tab, $value-mobile) !important; // Check if tab size is provided
+    }
+
+    @media (max-width: 600px) {
+        font-size: $value-mobile !important;
+    }
+}
+@mixin responsive-line-height($value-desktop,$value-laptop: null,$value-tab: null,$value-mobile,$base-width: 1920) {
+    
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+       line-height: math.div($value-desktop, $base-width) * 100vw;
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        line-height: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        line-height: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+
+    @media (max-width: 600px) {
+        line-height: $value-mobile;
+     }
+}
+@mixin responsive-letter-spacing($value-desktop,$value-laptop: null,$value-tab: null,$value-mobile,$base-width: 1920) {
+    
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+       letter-spacing: math.div($value-desktop, $base-width) * 100vw;
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        letter-spacing: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+
+    // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        letter-spacing: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+
+    @media (max-width: 600px) {
+        letter-spacing: $value-mobile;
+     }
+}
+
+@mixin responsive-padding-top($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        padding-top: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        padding-top: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        padding-top: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        padding-top: $value-mobile;
+    }
+}
+@mixin responsive-padding-bottom($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        padding-bottom: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        padding-bottom: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        padding-bottom: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        padding-bottom: $value-mobile;
+    }
+}
+@mixin responsive-padding-left($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        padding-left: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        padding-left: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        padding-left: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        padding-left: $value-mobile;
+    }
+}
+@mixin responsive-padding-right($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        padding-right: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        padding-right: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        padding-right: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        padding-right: $value-mobile;
+    }
+}
+@mixin responsive-padding($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        padding: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        padding: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        padding: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        padding: $value-mobile;
+    }
+}
+
+@mixin responsive-height-vh($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        height: $value-desktop;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        height: if($value-laptop != null, $value-laptop, value-desktop); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        height: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        height: $value-mobile;
+    }
+}
+@mixin responsive-height($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        height: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        height: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        height: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        height: $value-mobile;
+    }
+}
+@mixin responsive-width($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        width: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        width: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        width: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        width: $value-mobile;
+    }
+}
+@mixin responsive-width-percentage($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        width: $value-desktop;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        width: if($value-laptop != null, $value-laptop, $value-desktop); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        width: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        width: $value-mobile;
+    }
+}
+@mixin responsive-wrapper($value-desktop, $value-laptop: null, $value-tab: null, $value-mobile) {
+    
+    margin-left: auto;
+    margin-right: auto;
+  
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        width: $value-desktop;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        width: if($value-laptop != null, $value-laptop, $value-desktop); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        width: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        width: $value-mobile;
+    }
+}
+
+
+@mixin responsive-position-top($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        top: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        top: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        top: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        top: $value-mobile;
+    }
+}
+@mixin responsive-position-bottom($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        bottom: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        bottom: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        bottom: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        bottom: $value-mobile;
+    }
+}
+@mixin responsive-position-right($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        right: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        right: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        right: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        right: $value-mobile;
+    }
+}
+@mixin responsive-position-left($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // padding for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        left: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        left: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // padding for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        left: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        left: $value-mobile;
+    }
+}
+
+@mixin responsive-margin-top($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        margin-top: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        margin-top: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        margin-top: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        margin-top: $value-mobile;
+    }
+}
+@mixin responsive-margin-bottom($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // margin for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        margin-bottom: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        margin-bottom: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        margin-bottom: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        margin-bottom: $value-mobile;
+    }
+}
+@mixin responsive-margin-left($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // Font size for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        margin-left: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        margin-left: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // Font size for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        margin-left: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        margin-left: $value-mobile;
+    }
+}
+@mixin responsive-margin-right($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // margin for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        margin-right: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        margin-right: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        margin-right: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        margin-right: $value-mobile;
+    }
+}
+@mixin responsive-margin($value-desktop, $value-laptop: null,$value-tab: null, $value-mobile,$base-width: 1920) {
+    // margin for screens above 1025px, Desktop converted to vw
+    @media (min-width: 1025px) {
+        margin: math.div($value-desktop, $base-width) * 100vw;
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        margin: if($value-laptop != null, math.div($value-laptop, $base-width) * 100vw, math.div($value-desktop, $base-width) * 100vw); // Use laptop size or fallback to desktop
+    }
+ 
+     // margin for screens below 1600px,Laptop converted to vw
+    @media (min-width: 600px) and (max-width: 1025px) {
+        margin: if($value-tab != null, $value-tab, $value-mobile); // Check if tab size is provided
+    }
+ 
+    @media (max-width: 600px) {
+        margin: $value-mobile;
+    }
+}

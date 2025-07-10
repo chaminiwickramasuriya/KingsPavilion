@@ -1,0 +1,566 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+$text-font: $font-opensans;
+$text-color: $text-color;
+
+$lable-font: $font-opensans;
+$label-color: $text-color;
+
+$input-font: $font-opensans;
+$input-color: $text-color;
+$input-background-color: transparent;
+$input-border-color: #A8A9A9;
+$input-focus-border-color: $bg-btn-color;
+
+$anchor-font: $font-opensans;
+$anchor-color: $text-color;
+$anchor-hover-color: red;
+
+$button-font: $font-opensans;
+$button-color: $main-color;
+$button-bg-color: transparent;
+$button-border-color: $main-color;
+$button-hover-bg-color: $main-color;
+$button-hover-border-color: $main-color;
+
+$error-font: red;
+
+$check-border-color: $text-color;
+$check-bg-color: $text-color;
+
+/**********************Checkbox Formatting***********************/
+.dfb-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .dfb-form-group {
+    @include responsive-padding-bottom(15, null, null, 15px);
+  }
+  .input-group {
+    .input-line {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  .response-field-date {
+    .above-line {
+      width: 2%;
+      display: flex;
+      justify-content: center;
+    }
+    .day,
+    .month,
+    .year {
+      width: 32%;
+    }
+  }
+  .response-field-time {
+    .above-line {
+      width: 2%;
+      display: flex;
+      justify-content: center;
+    }
+    .hours,
+    .minutes,
+    .seconds {
+      width: 30%;
+    }
+    .am_pm {
+      width: 8%;
+    }
+  }
+  .checkbox-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .is_required {
+    @include responsive-font-size(12, null, null, 12px);
+    @include responsive-line-height(15, null, null, 18px);
+  }
+  label {
+    text-align: left;
+    font-family: $lable-font;
+    font-weight: 400 !important;
+    color: $label-color;
+    @include responsive-font-size(20, null, null, 16px);
+    @include responsive-line-height(44, null, null, 32px);
+    @include responsive-letter-spacing(0.4, null, null, 0.4px);
+    &:not(.checkbox-inline) {
+      @include responsive-padding-bottom(5, null, null, 5px);
+    }
+  }
+
+  // Common input styles
+  @mixin input-styles {
+    font-family: $input-font;
+    color: $input-color;
+    width: 100%;
+    font-weight: 600 !important;
+    border: 1px solid transparent;
+    background-color: $white !important;
+    // border-radius: 5px !important;
+    @include responsive-height(50, null, null, 45px);
+    @include responsive-padding-left(10, null, null, 10px);
+    @include responsive-padding-right(10, null, null, 10px);
+    @include responsive-font-size(16, null, null, 15px);
+    @include responsive-line-height(30, null, null, 15px);
+    &:focus {
+      border: 2px solid $input-focus-border-color;
+      background: #fff !important;
+    }
+  }
+
+  .response-field-checkboxes {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    flex-direction: column;
+    // padding-left: get-vw(5);
+    div {
+      display: flex;
+      a {
+        display: inline !important;
+        padding-left: 0 !important;
+        color: $anchor-color;
+        &:hover {
+          color: $anchor-hover-color;
+        }
+      }
+    }
+    input[type="checkbox"] {
+      position: absolute;
+      left: 0;
+      @include responsive-position-top(20, null, null, 10px);
+    }
+    .row {
+      @include responsive-font-size(16, null, null, 15px);
+      @include responsive-line-height(30, null, null, 25px);
+    }
+  }
+
+  .checkboxdiv_id_wrap_cls_wrap {
+    .text-danger {
+      display: none !important;
+    }
+    p {
+      margin: 0 !important;
+      padding-left: 0 !important;
+    }
+    label {
+      height: 0 !important;
+      display: none;
+    }
+    .row {
+      @include responsive-padding-left(15, null, null, 10px);
+    }
+    div {
+      label {
+        height: auto;
+        display: block !important;
+      }
+    }
+    .checkbox-inline {
+      font-size: 0 !important;
+    }
+  }
+  .checkbox-inline{
+    position: relative;
+    padding-left: get-vw(30);
+    @media screen and (max-width:667px) {
+      padding-left: 20px !important;
+    }
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    @include input-styles;
+  }
+  select {
+    background-image: url("../../img/select.png");
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    background-position: calc(100% - get-vw(15));
+    background-size: get-vw(15) auto;
+  }
+
+  textarea {
+    width: 100% !important;
+    height: 200px !important;
+    @include input-styles;
+  }
+  .input-group {
+    .note {
+      color: $text-color;
+      @include responsive-font-size(14, null, null, 15px);
+      @include responsive-line-height(15, null, null, 15px);
+    }
+  }
+
+  .response-field-dropdown {
+    width: 100%;
+  }
+
+  // Button styles
+  #validateBtn,
+  #resetBtn {
+    border: 1px solid $dark-green !important;
+    background-color: $dark-green;
+    @include responsive-width(200, null, null, 150px);
+    @include responsive-height(55, null, null, 45px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    text-align: center;
+    font-family: $font-opensans;
+    border-radius: 0;
+    @include responsive-font-size(18, null, null, 15px);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s ease;
+    @include responsive-line-height(28, null, null, 28px);
+    @include responsive-letter-spacing(0.9, null, null, 0.5px);
+    &:hover{
+      transition: all 0.5s;
+      color: $dark-green;
+      background: #fff;
+      border: 1px solid $dark-green !important;
+    }
+  }
+  .help-block.show-error {
+    display: block !important;
+  }
+  .checkbox-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .dfb-form-group,
+  #gdpr_compliance_id_wrap p,
+  #gdpr_compliance_id_wrap label {
+    
+    font-family: $lable-font;
+    color: $label-color;
+    @include responsive-font-size(16, 18, null, 16px);
+    @include responsive-line-height(30, 30, null, 30px);
+  }
+  #gdpr_compliance_id_wrap label{
+    font-weight: 500 !important;
+  }
+  #gdpr_compliance_id_wrap {
+    label:not(.checkbox-inline) {
+      font-weight: 600;
+    }
+    p:first-child {
+      margin: 0;
+    }
+  }
+  .recapture {
+    font-family: $text-font;
+    color: $text-color;
+    @include responsive-font-size(13, null, null, 13px);
+    @include responsive-line-height(20, null, null, 18px);
+    a {
+      font-family: $anchor-font;
+      color: $anchor-color;
+      @include responsive-font-size(13, null, null, 13px);
+      @include responsive-line-height(20, null, null, 18px);
+      &:hover {
+        color: $anchor-hover-color;
+      }
+    }
+  }
+  #gdpr_compliance__id_wrap {
+    label {
+      font-weight: 600;
+      @include responsive-font-size(18, null, null, 16px);
+      @include responsive-padding-top(30, null, null, 20px);
+      @include responsive-padding-bottom(30, null, null, 20px);
+    }
+
+    a {
+      text-decoration: underline;
+      color: $anchor-color;
+      transition: all 0.5s;
+
+      &:hover {
+        color: $anchor-hover-color;
+      }
+    }
+  }
+  .help-block {
+    color: $error-font;
+    width: 100%;
+    @include responsive-font-size(14, null, null, 13px);
+    @include responsive-line-height(28, null, null, 20px);
+  }
+}
+
+div#contact_title_id_wrap {
+ @include responsive-width-percentage(30%, null, null, 100%);
+}
+div#contact_name_id_wrap {
+  @include responsive-width-percentage(70%, null, null, 100%);
+}
+div#contact_gdpr_id_wrap{
+  p{
+    @include responsive-font-size(16, null, null, 14px);
+    font-weight: 400;
+    @include responsive-letter-spacing(0.32, null, null, 0.32px);
+  }
+  label.checkbox-inline{
+    @include responsive-font-size(16, null, null, 14px);
+    @include responsive-line-height(28, null, null, 28px);
+    padding-top: 0.78125vw;
+    @media screen and (max-width:1025px) {
+      padding-top: 4px;
+    }
+  }
+}
+input#contact_gdpr{
+  border: 1px solid $input-focus-border-color;
+  background: #fff !important;
+}
+.fb-submit-row {
+  @include responsive-margin-top(30, null, null, 15px);
+}
+form#newsletter{
+  input, select{
+    border: 1px solid $input-focus-border-color;
+  }
+}
+.form-control {
+    border-radius: 0 !important;
+}
+
+@media only screen and (min-width: 1025px) {
+  .alert-success,
+  .alert-success a,
+  .alert-danger,
+  .alert-danger a {
+    font-size: get-vw(18) !important;
+    line-height: get-vw(30) !important;
+  }
+  .dfb-form-group {
+    col-sm-6 {
+      &:not(.col-md-4),
+      &:not(.col-md-8) {
+        width: 49.5%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .dfb-form #subscribe-text_id_wrap .input-group .row {
+    width: 85%;
+    font-size: 14px !important;
+    line-height: 25px !important;
+  }
+  .dfb-form #subscribe-text_id_wrap .input-group .checkbox-inline {
+    width: 15%;
+  }
+  .alert-success,
+  .alert-success a,
+  .alert-danger,
+  .alert-danger a {
+    font-size: 16px !important;
+    line-height: 30px !important;
+  }
+  .dfb-form-group {
+    col-sm-6 {
+      width: 100% !important;
+    }
+    col-md-4 {
+      width: 100% !important;
+    }
+  }
+  #gdpr_compliance_id_wrap input {
+    position: absolute;
+    left: 0;
+    top: 6px;
+  }
+  #gdpr_compliance_id_wrap .checkbox-inline {
+    padding-left: 30px;
+    position: relative;
+  }
+  .response-field-time {
+    .above-line {
+      width: 2.5% !important;
+      display: flex;
+      justify-content: center;
+    }
+    .hours,
+    .minutes,
+    .seconds {
+      width: 25% !important;
+    }
+    .am_pm {
+      width: 20% !important;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+  .dfb-form-group {
+    .col-sm-6 {
+      width: 49% !important;
+    }
+    .col-md-4 {
+      width: 32% !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dfb-form-group {
+    .col-sm-6 {
+      width: 100% !important;
+    }
+    .col-md-4 {
+      width: 100% !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .dfb-form {
+    input[type="checkbox"] {
+      position: relative;
+      visibility: hidden;
+      -moz-appearance: initial;
+      display: inline-block;
+      width: get-vw(30);
+      height: get-vw(15);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:before,
+    input[type="checkbox"]:checked:after {
+      width: get-vw(15);
+      height: get-vw(15);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: relative;
+      content: "";
+      visibility: visible;
+      border: 1px solid $check-border-color !important;
+    }
+    input[type="checkbox"]:checked:after {
+      margin: auto;
+      left: get-vw(-15);
+      font-size: 10px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: FontAwesome;
+      background-image: url("../../img/tick.png");
+      background-size: get-vw(10) auto;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-color: $check-bg-color;
+      display: inline-block;
+      border: 1px solid $check-border-color !important;
+    }
+    input[type="checkbox"]:before {
+      left: 0;
+      background-color: transparent;
+      display: inline-block;
+    }
+    input[type="checkbox"]:before,
+    input[type="checkbox"]:checked:after {
+      border: 1px solid $check-border-color !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .dfb-form select{
+    background-position: calc(100% - 15px);
+    background-size: 15px;
+  }
+  .checkbox-inline{
+    position: relative;
+    padding-left: 30px;
+  }
+  .dfb-form {
+    input[type="checkbox"] {
+      position: relative;
+      visibility: hidden;
+      -moz-appearance: initial;
+      display: inline-block;
+      width: 30px;
+      height: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:before,
+    input[type="checkbox"]:checked:after {
+      width: 15px;
+      height: 15px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: relative;
+      content: "";
+      visibility: visible;
+      border: 1px solid $check-border-color !important;
+    }
+    input[type="checkbox"]:checked:after {
+      margin: auto;
+      left: -15px;
+      font-size: 10px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: FontAwesome;
+      background-image: url("../../img/tick.png");
+      background-size: 10px auto;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-color: $check-bg-color;
+      display: inline-block;
+      border: 1px solid $check-border-color !important;
+    }
+    input[type="checkbox"]:before {
+      left: 0;
+      background-color: transparent;
+      display: inline-block;
+    }
+    input[type="checkbox"]:before,
+    input[type="checkbox"]:checked:after {
+      border: 1px solid $check-border-color !important;
+    }
+  }
+
+	.dfb-form .checkbox-inline {
+    position: relative;
+    padding-left: 3.5625vw;
+  }
+	.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+@media (min-width: 600px) and (max-width: 1025px) {
+}
+@media only screen and (max-width: 600px) {
+}

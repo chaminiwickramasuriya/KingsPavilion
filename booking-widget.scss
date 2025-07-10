@@ -1,0 +1,422 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+.booking-widget{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    position: fixed;
+    right: 4%;
+    background: $bg-cream;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+    z-index: -1;
+    @include responsive-width(400, null, 100%, 100%);
+    @include responsive-padding(30, null, 30px, 20px);
+    @include responsive-position-top(150, 150, 130px, 10px);
+    .form-row{
+        @include responsive-padding-bottom(15, null, null, 10px);
+    }
+    @media screen and (max-width:1400px) and (min-width:991px){
+        width:300px;
+        right: 4%;
+    }  
+    input[type="text"]{
+        border: 1px solid #fff;
+        font-family: $font-opensans;
+        color: $text-color;
+        width: 100%;
+        border-radius: 0 !important;
+        font-weight: 500 !important;
+        background-color: #fff !important;
+        @include responsive-height(50, null, null, 45px);
+        @include responsive-padding-left(10, null, null, 10px);
+        @include responsive-padding-right(10, null, null, 10px);
+        @include responsive-font-size(16, null, null, 15px);
+        @include responsive-line-height(30, null, null, 15px);
+        &:focus {
+            border: 1px solid $text-color;
+            background-color: #fff !important;
+        }
+    }
+    .nationality{
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    .nationality-drop{
+        button{
+            border: 1px solid #fff;
+            font-family: $font-opensans;
+            text-align: left;
+            color: $text-color;
+            width: 100%;
+            color: #757575 !important;
+            border-radius: 0 !important;
+            font-weight: 500 !important;
+            background-color: #fff !important;
+            background-image: url("../../img/drop.png");
+            background-repeat: no-repeat;
+            -webkit-appearance: none;
+            background-position: calc(100% - get-vw(10));
+            background-size: get-vw(10) auto;
+            @include responsive-height(50, null, null, 45px);
+            @include responsive-padding-left(10, null, null, 10px);
+            @include responsive-padding-right(10, null, null, 10px);
+            @include responsive-font-size(16, null, null, 15px);
+            @include responsive-line-height(30, null, null, 15px);
+            &:focus {
+                border: 1px solid $text-color;
+                background-color: #fff !important;
+            }
+        }
+        ul{
+            width: 100%;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+            border: 0;
+            li{
+                a{
+                    @include responsive-font-size(16, null, null, 15px);
+                    @include responsive-line-height(30, null, null, 15px);
+                }
+                a:active{
+                    background: $text-color !important;
+                }
+                a.active{
+                    background: $text-color !important;
+                }
+            }
+        }
+    }
+    .date-range,.date-range:focus,.date-range:hover{
+        background-image: url("../../img/calendar.png");
+        background-size: get-vw(20) auto;
+        background-repeat: no-repeat;
+        background-position: get-vw(15) center;
+        padding-left: get-vw(50) !important;
+    }
+    label{
+        text-align: left;
+        font-family: $font-opensans;
+        font-weight: 600 !important;
+        color: $text-color;
+        @include responsive-font-size(16, null, null, 16px);
+        @include responsive-line-height(25, null, null, 30px);
+        &:not(.checkbox-inline) {
+            @include responsive-padding-bottom(5, null, null, 5px);
+        }
+    }
+    .booking-submit{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-decoration: none;
+        font-weight: 600;
+        width: 100%;
+        text-transform: uppercase;
+        overflow: hidden;
+        font-style: normal;
+        transition: all 0.3s;
+        border-radius: 0 !important;
+        border: 1px solid $bg-btn-color;
+        font-family: $font-opensans !important;
+        background-color: $bg-btn-color;
+        color: #fff;
+        @include responsive-font-size(15, null, null, 14px);
+        @include responsive-height(55, null, null, 45px);
+        @include responsive-letter-spacing(0.9, null, null, 0.9px);
+        @include responsive-padding-left(40, null, null, 20px);
+        @include responsive-padding-right(40, null, null, 20px);
+          &:hover {
+            transition: all 0.3s;
+            color: #fff;
+            background-color: $main-color ;
+            border: 1px solid $main-color ;
+          }
+    }
+    .error-text{
+        @include responsive-font-size(14, null, null, 13px);
+        @include responsive-line-height(20, null, null, 20px);
+        @include responsive-padding-top(10, null, null, 10px);
+    }
+    .checkbox-wrap{
+        position: relative;
+        input{
+            position: absolute !important;
+            left: 0;
+            
+        }
+        label{
+            padding-bottom: 0 !important;
+            @include responsive-padding-left(30, null, null, 30px);
+        }
+    }
+}
+.booking-widget.show{
+    z-index: 999;
+    transition: all 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+.booking-widget.booking-scrolled{
+    transition: all 0.3s;
+    @include responsive-position-top(100, null, 75px, 10px);
+}
+.book-widget-open{
+    @include responsive-width(230, null, null, null);
+    .btn-close-btn{
+        display: none;
+    }
+}
+.book-widget-open.show{
+    .btn-next{
+        display: none;
+    }   
+    .btn-close-btn{
+        display: block;
+    }
+}
+.best-rate{
+    @include responsive-line-height(22, null, null, 18px);
+}
+.flatpickr-day.selected,.flatpickr-day.startRange,.flatpickr-day.endRange,.flatpickr-day.selected.inRange,.flatpickr-day.startRange.inRange,.flatpickr-day.endRange.inRange,.flatpickr-day.selected:focus,.flatpickr-day.startRange:focus,.flatpickr-day.endRange:focus,.flatpickr-day.selected:hover,.flatpickr-day.startRange:hover,.flatpickr-day.endRange:hover,.flatpickr-day.selected.prevMonthDay,.flatpickr-day.startRange.prevMonthDay,.flatpickr-day.endRange.prevMonthDay,.flatpickr-day.selected.nextMonthDay,.flatpickr-day.startRange.nextMonthDay,.flatpickr-day.endRange.nextMonthDay {
+    background: #cb997e;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    border-color: #cb997e;
+}
+input[type="checkbox"]:before{
+    @include responsive-position-top(5, 10, null, 7px); 
+}
+@media screen and (max-width:1340px) and (min-width:1025px) {
+    input[type="checkbox"]:before{
+        top: 10px;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    
+    .form-row-submit{
+        padding: 0 !important;
+    }
+    .booking-widget{
+        input[type="checkbox"] {
+            position: relative;
+            visibility: hidden;
+            -moz-appearance: initial;
+            display: inline-block;
+            width: get-vw(30);
+            height: get-vw(15);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+        }
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked:after {
+            width: get-vw(15);
+            height: get-vw(15);            
+            right: 0;
+            bottom: 0;
+            position: relative;
+            content: "";
+            visibility: visible;
+            border: 1px solid $text-color !important;
+        }
+        input[type="checkbox"]:checked:after {
+            margin: auto;
+            left: get-vw(-15);
+            font-size: 10px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: FontAwesome;
+            background-image: url("../../img/tick.png");
+            background-size: get-vw(10) auto;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-color: $text-color;
+            display: inline-block;
+            border: 1px solid $text-color !important;
+        }
+        input[type="checkbox"]:before {
+            left: 0;
+            background-color: transparent;
+            display: inline-block;
+        }
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked:after {
+            border: 1px solid $text-color !important;
+        }
+    }
+}
+@media only screen and (max-width: 1025px) {
+    .booking-title{
+        font-size: 18px !important;
+    }
+    .form-row-submit{
+        padding: 10px 0 0 0 !important;
+    }
+    .booking-widget{
+        .date-range,.date-range:focus,.date-range:hover{
+            background-size:20px auto;
+            background-repeat: no-repeat;
+            background-position: 15px center;
+            padding-left: 50px !important;
+        }
+    }
+    .booking-widget {
+        input[type="checkbox"] {
+            position: relative;
+            visibility: hidden;
+            -moz-appearance: initial;
+            display: inline-block;
+            width: 30px;
+            height: 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+        }
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked:after {
+            width: 15px;
+            height: 15px;
+            right: 0;
+            bottom: 0;
+            position: relative;
+            content: "";
+            visibility: visible;
+            border: 1px solid $text-color !important;
+        }
+        input[type="checkbox"]:checked:after {
+            margin: auto;
+            left: -15px;
+            font-size: 10px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: FontAwesome;
+            background-image: url("../../img/tick.png");
+            background-size: 10px auto;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-color: $text-color;
+            display: inline-block;
+            border: 1px solid $text-color !important;
+        }
+        input[type="checkbox"]:before {
+            left: 0;
+            background-color: transparent;
+            display: inline-block;
+        }
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked:after {
+            border: 1px solid $text-color !important;
+        }
+    }
+}
+@media only screen and (min-width: 992px) {
+    .book-widget-open-mobile{
+        // display: none !important;
+        background-color: transparent;
+        border: 0 !important;
+        right: 0;
+        position: relative;
+        width: 100%;
+        left: auto;
+        margin-right: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .booking-form .booking-submit{
+        height: 50px !important;
+    }
+    .reserveBtnMobile .book-widget-open{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: $bg-green;
+        border: 1px solid $bg-green;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            color: $white;
+            font-family: $font-opensans;
+            font-size: 18px;
+        }
+    }
+    .booking-widget {
+        top: auto !important;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .book-widget-open-mobile{
+        position: relative !important;
+        background: transparent !important;
+        border: 0 !important;
+        width: max-content !important;
+        display: flex;
+        height: auto !important;
+        justify-content: flex-end !important;
+        margin-left: auto !important;
+        padding-right: 0 !important;
+        &:hover{
+            background: transparent !important;
+            border: 0 !important;
+        }
+        img{
+            height: 25px !important;
+            width: 25px !important;
+        }
+    }
+    .book-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(0 0 0 / 50%);
+        opacity: 0;
+        z-index: -1;
+    }
+    .book-overlay.show{
+        opacity: 1;
+        z-index: 9;
+    }
+    .booking-widget {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (max-width:667px) {
+    .book-all{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        z-index: -1;
+    }
+    .book-all.show{
+        opacity: 1;
+        z-index: 9;
+    }
+}

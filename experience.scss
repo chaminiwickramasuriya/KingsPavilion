@@ -1,0 +1,37 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+
+#experienceBlock{
+    .sidebysideBlock{
+        @media screen and (max-width:1025px) {
+            padding-bottom: 50px !important;
+        }
+        .descriptionBlock{
+            @media screen and (max-width:667px) {
+                .moredetails{
+                    display: flex;
+                    width: fit-content;
+                }
+            }            
+        }
+        &:nth-child(even){
+            flex-direction: row-reverse;
+            @media screen and (max-width:1025px) {
+                flex-direction: column;
+            }
+        }
+        .expoImage{
+            @media screen and (max-width:1025px) {
+                padding-bottom: 25px !important;
+            }
+        }
+        .vedioheight{
+            @include responsive-height(600, null, 700px, 260px);
+            video{
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }    
+}

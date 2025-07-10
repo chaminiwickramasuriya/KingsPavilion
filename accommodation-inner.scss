@@ -1,0 +1,193 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+
+#keyFeatures{
+    .featureIconstext{
+        @include responsive-margin-left(30, null, 0, 0);
+        @include responsive-margin-right(30, null, 0, 0);
+        @media screen and (max-width:1025px) and (min-width:992px) {
+            margin: 0 30px !important;
+        }
+        .icon {
+            @include responsive-width(50, null, null, 30px);
+            @include responsive-height(50, null, null, 30px);
+        }
+    }
+}
+
+#aboutGallery{
+    .gal-img{
+        .gal-img-slider{
+            @include responsive-height(550, null, 320px, 230px);
+            width: 100%;
+        }
+    }
+}
+
+#amenityfacility{
+    position: relative;
+    &::after{
+        content: "";
+        background-image: url('../../img/bg-cream.png');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: auto;
+        top: 0;
+    }
+    .amenitytitlefacility{
+        text-transform: capitalize;
+        font-weight: 400;
+        z-index: 8;
+        position: relative;
+        @include responsive-padding-bottom(30, null, null, 25px);
+    }
+    .amenitynames{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .txtamnity{
+            position: relative;
+            z-index: 8;
+            @include responsive-width-percentage(33.33%, null, null, 100%);
+            @media screen and (min-width:1920px) {
+                margin: 0 -30px !important;
+            }
+            @media screen and (max-width:1440px) {
+                margin: 0 30px !important;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0.6vw;
+                left: -30px;
+                width: 1em;
+                height: 1em;
+                background-image: url("../../img/check.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                @media screen and (min-width:1920px) {
+                    left: -45px;
+                }
+                @media screen and (max-width:667px) {
+                    top: 1.5vw;
+                    left: -33px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:1025px) and (min-width:668px) {
+        .wrapper--60{
+            width: 82% !important;
+        }
+    }
+}
+
+
+
+#otherStays{
+    .otherstaysSlide{
+        z-index: 8;
+        position: relative;
+        .roomStaysPosts{ 
+            @include responsive-padding-bottom(80, null, null, 50px);
+            .imageRoom{
+                @include responsive-height(600, null, 400px, 380px);
+                &::after {
+                    content: "";
+                    background: rgb(0,0,0);
+                    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    z-index: 8;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .inerDetails{
+                position: absolute;
+                top: auto;
+                bottom: 0;
+                z-index: 9;
+                text-align: center;
+                width: 100%;
+                @include responsive-padding-bottom(50, null, null, 30px);
+                .typename{
+                    @include responsive-font-size(16, null, null, 15px);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    @include responsive-letter-spacing(1.6, null, null, 1.6px);
+                    text-transform: uppercase;
+                    @include responsive-padding-bottom(15, null, null, 10px);
+                }
+                .roomname{
+                    font-style: normal;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                }
+            }
+            .amenitiestypes{
+                @include responsive-padding-bottom(45, null, null, 35px);
+                @include responsive-padding-top(45, null, null, 35px);
+                hr {
+                    border: 1px solid $text-color;
+                    height: 20px !important;
+                    margin: 0 20px !important;
+                    opacity: 1;
+                    @media screen and (max-width:667px) {
+                        margin: 0 10px !important;
+                    }
+                }
+                hr:last-child {
+                    display: none;
+                }
+                .amenity_name{
+                    @include responsive-font-size(20, null, null, 16px);
+                    font-style: normal;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    @include responsive-line-height(30, null, null, 28px);                        
+                }
+            }
+        }
+    }
+}
+
+
+ @media screen and (min-width:1920px) {
+    #otherStays{
+        .slick-arrow {
+            top: 35%;
+            &.slick-next{
+                right: -5%;
+            }
+            &.slick-prev {
+                left: -5%;
+            }
+        }
+    }
+    section#aboutGallery{
+        .slick-arrow {
+            top: 45%;
+            &.slick-next{
+                right: -5%;
+            }
+            &.slick-prev {
+                left: -5%;
+            }
+        }
+    }
+}

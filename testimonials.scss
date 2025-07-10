@@ -1,0 +1,43 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+
+
+section#TestimornialSection{
+    .testimonialBx{
+        @include responsive-padding-top(50, null, 25px, 15px);
+        @include responsive-padding-bottom(50, null, 25px, 15px);
+        @include responsive-padding-left(150, null, 80px, 15px);
+        @include responsive-padding-right(150, null, 80px, 15px);
+        &:nth-child(odd){
+            background-image: url('../../img/bg-cream.png');
+            background-repeat: no-repeat;
+            background-color: $bg-cream;
+        }
+        .star-rating {
+            color: #FFC107; 
+            font-size: 32px;
+            @include responsive-padding-top(25, null, null, 15px);
+            @include responsive-padding-bottom(25, null, null, 15px);
+            line-height: 28px;
+        }
+        
+        .star {
+            @include responsive-margin-right(2, null, null, 2px);
+        }
+        
+        .star.filled {
+            color: #FFC107;
+        }
+        .titleTestimornial {
+            color:#182E39;
+            font-family:$font-dmserif;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+
